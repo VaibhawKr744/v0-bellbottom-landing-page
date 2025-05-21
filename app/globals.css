@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 3%;
+    --card-foreground: 36 100% 90%;
+
+    --popover: 0 0% 3%;
+    --popover-foreground: 36 100% 90%;
+
+    --primary: 0 73% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 100% 36%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 9%;
+    --muted-foreground: 36 30% 70%;
+
+    --accent: 36 100% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 36 100% 90%;
+
+    --border: 36 100% 36%;
+    --input: 36 100% 36%;
+    --ring: 36 100% 50%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@font-face {
+  font-family: "Script";
+  src: url("/fonts/script.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-script {
+  font-family: "Script", cursive;
+}
+
+/* Hanging card animation */
+.hanging-card {
+  transform-origin: top center;
+  animation: swing 3s ease-in-out infinite;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-2deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-1deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
