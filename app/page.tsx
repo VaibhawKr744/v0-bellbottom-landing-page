@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ShoppingCart, User, Menu } from "lucide-react"
-import FoodGrid from "@/components/food-grid"
+import DishCarousel from "@/components/dish-carousel"
 
 export default function Home() {
   return (
@@ -138,11 +138,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Food Grid Section */}
+        {/* Popular Dishes Carousel Section */}
         <section className="py-16 bg-black">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-amber-400">Our Signature Dishes</h2>
-            <FoodGrid />
+            <DishCarousel />
           </div>
         </section>
 
