@@ -2,6 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { ShoppingCart, User, Menu } from "lucide-react"
 import DishCarousel from "@/components/dish-carousel"
+import ShortsCarousel from "@/components/shorts-carousel"
+import ComprehensiveSection from "@/components/comprehensive-section"
 
 export default function Home() {
   return (
@@ -144,6 +146,12 @@ export default function Home() {
             <DishCarousel />
           </div>
         </section>
+
+        {/* Shorts Video Section */}
+        <ShortsCarousel />
+
+        {/* Comprehensive Section */}
+        <ComprehensiveSection />
 
         {/* About Us Section */}
         <section className="py-16 bg-gradient-to-b from-black to-red-950">
