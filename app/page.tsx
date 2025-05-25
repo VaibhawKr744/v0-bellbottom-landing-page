@@ -10,17 +10,21 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-black/90 border-b border-amber-900/30">
-        <div className="container mx-auto px-4 flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="https://sjc.microlink.io/Tl88rJDbLQFQf5iIZzpSibNnadyTmxO6WdZtlr-Cy3d-QLZr2Tsx6QKiWguqFhwrVSDXW6C_OC-VSQ_Nued-2g.jpeg"
-              alt="Bell Bottom"
-              width={200}
-              height={100}
-              className="h-16 w-auto"
-              priority
-            />
-          </Link>
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+          {/* Logo Added Here - Increased Size */}
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center">
+              <div className="relative h-24 w-64 mr-6">
+                <Image 
+                  src="https://flipdish.imgix.net/AWNUnnTXwZwHsy52O6K7gY7CbR4.png?w=300&auto=format&upscale=true&dpr=2&q=45" 
+                  alt="Bell Bottom Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
@@ -100,7 +104,7 @@ export default function Home() {
               <div className="hanging-card bg-red-600 text-white px-4 py-3 rounded-md shadow-lg border-2 border-amber-400 transform rotate-[-2deg]">
                 <p className="text-sm md:text-base font-bold">SIGN UP & ORDER</p>
                 <p className="text-xl md:text-2xl font-bold">
-                  £30 <span className="text-xs md:text-sm">Earn Tikka Credits</span>
+                  £30 <span className="text-xs md:text-sm">Earn Bell Bottom Credits</span>
                 </p>
               </div>
             </div>
@@ -110,10 +114,10 @@ export default function Home() {
           <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4">
             <div className="bg-black/70 p-8 md:p-10 rounded-lg max-w-4xl w-full text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-orange-500 mb-4">
-                ENJOY THE BEST TIKKAS AT TIKKA NATION
+                ENJOY THE BEST AUTHENTIC FLAVORS AT BELL BOTTOM
               </h1>
               <p className="text-xl md:text-2xl text-white mb-8">
-                Savor the Taste and Earn valuable Tikka Credits with every bite.
+                Savor the Taste and Earn valuable Bell Bottom Credits with every bite.
               </p>
 
               <div className="flex flex-col md:flex-row gap-4 justify-center">
