@@ -109,88 +109,94 @@ export default function DishCarousel() {
   }
 
   return (
-    <div className="relative overflow-hidden">
-      <h2 className="text-3xl font-bold text-center mb-8 text-amber-400">Popular Dishes</h2>
+    <div className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white py-16">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-8 text-blue-900">Popular Dishes</h2>
 
-      <div
-        className="relative overflow-hidden"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {/* Navigation Buttons */}
-        <button
-          onClick={movePrev}
-          className="absolute left-0 top-1/2 z-10 bg-black/70 p-2 rounded-r-md text-white hover:bg-black/90 transform -translate-y-1/2"
-          aria-label="Previous dish"
+        <div
+          className="relative overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
-          <ChevronLeft className="h-6 w-6" />
-        </button>
-
-        <button
-          onClick={moveNext}
-          className="absolute right-0 top-1/2 z-10 bg-black/70 p-2 rounded-l-md text-white hover:bg-black/90 transform -translate-y-1/2"
-          aria-label="Next dish"
-        >
-          <ChevronRight className="h-6 w-6" />
-        </button>
-
-        {/* Carousel Container */}
-        <div className="overflow-hidden">
-          <div
-            ref={carouselRef}
-            className={`flex ${isAnimating ? "transition-transform duration-500 ease-in-out" : ""}`}
-            style={{ transform: getTransformValue() }}
+          {/* Navigation Buttons */}
+          <button
+            onClick={movePrev}
+            className="absolute left-0 top-1/2 z-10 bg-blue-600/90 p-3 rounded-r-md text-white hover:bg-blue-700 transform -translate-y-1/2 shadow-lg"
+            aria-label="Previous dish"
           >
-            {displayDishes.map((dish, index) => (
-              <div
-                key={`${dish.id}-${index}`}
-                className="min-w-[25%] px-2"
-                style={{ flex: `0 0 ${100 / itemsPerView}%` }}
-              >
-                <Link href={dish.link} className="block group">
-                  <div className="bg-black border border-amber-900/30 rounded-lg overflow-hidden">
-                    <div className="relative aspect-square overflow-hidden">
-                      <Image
-                        src={dish.image || "/placeholder.svg"}
-                        alt={dish.name}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+
+          <button
+            onClick={moveNext}
+            className="absolute right-0 top-1/2 z-10 bg-blue-600/90 p-3 rounded-l-md text-white hover:bg-blue-700 transform -translate-y-1/2 shadow-lg"
+            aria-label="Next dish"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          {/* Carousel Container */}
+          <div className="overflow-hidden">
+            <div
+              ref={carouselRef}
+              className={`flex ${isAnimating ? "transition-transform duration-500 ease-in-out" : ""}`}
+              style={{ transform: getTransformValue() }}
+            >
+              {displayDishes.map((dish, index) => (
+                <div
+                  key={`${dish.id}-${index}`}
+                  className="min-w-[25%] px-2"
+                  style={{ flex: `0 0 ${100 / itemsPerView}%` }}
+                >
+                  <Link href={dish.link} className="block group">
+                    <div className="bg-white border-2 border-blue-200 rounded-lg overflow-hidden hover:border-blue-400 transition-all shadow-lg hover:shadow-xl">
+                      <div className="relative aspect-square overflow-hidden">
+                        <Image
+                          src={dish.image || "/placeholder.svg"}
+                          alt={dish.name}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-800/40 to-transparent opacity-80" />
+                        <div className="absolute bottom-0 left-0 right-0 p-4">
+                          <h3 className="text-lg font-bold text-white">{dish.name}</h3>
+                        </div>
+                      </div>
+                      <div className="p-4 text-center bg-blue-50">
+                        <h3 className="text-lg font-semibold text-blue-900">{dish.name}</h3>
+                      </div>
                     </div>
-                    <div className="p-4 text-center">
-                      <h3 className="text-lg font-semibold text-amber-400">{dish.name}</h3>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Dots Indicator */}
-      <div className="flex justify-center mt-4 space-x-2">
-        {dishes.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setIsAnimating(true)
-              setActiveIndex(index)
-            }}
-            className={`h-2 w-2 rounded-full ${index === getCurrentDotIndex() ? "bg-amber-500" : "bg-amber-800"}`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
+        {/* Dots Indicator */}
+        <div className="flex justify-center mt-4 space-x-2">
+          {dishes.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setIsAnimating(true)
+                setActiveIndex(index)
+              }}
+              className={`h-2 w-2 rounded-full ${index === getCurrentDotIndex() ? "bg-red-600" : "bg-blue-300"}`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
 
-      {/* Order Now Button */}
-      <div className="text-center mt-8">
-        <Link
-          href="/order"
-          className="inline-block px-8 py-3 bg-amber-500 hover:bg-amber-600 text-black font-bold rounded-md transition"
-        >
-          Order Now
-        </Link>
+        {/* Order Now Button */}
+        <div className="text-center mt-8">
+          <Link
+            href="/order"
+            className="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-md transition shadow-lg"
+          >
+            Order Now
+          </Link>
+        </div>
       </div>
     </div>
   )

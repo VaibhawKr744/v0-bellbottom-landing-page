@@ -10,21 +10,17 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-black/90 border-b border-amber-900/30">
-        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
-          {/* Logo Added Here - Increased Size */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <div className="relative h-24 w-64 mr-6">
-                <Image 
-                  src="https://flipdish.imgix.net/AWNUnnTXwZwHsy52O6K7gY7CbR4.png?w=300&auto=format&upscale=true&dpr=2&q=45" 
-                  alt="Bell Bottom Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </Link>
-          </div>
+        <div className="container mx-auto px-4 flex items-center justify-between h-20">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="https://sjc.microlink.io/Tl88rJDbLQFQf5iIZzpSibNnadyTmxO6WdZtlr-Cy3d-QLZr2Tsx6QKiWguqFhwrVSDXW6C_OC-VSQ_Nued-2g.jpeg"
+              alt="Bell Bottom"
+              width={200}
+              height={100}
+              className="h-16 w-auto"
+              priority
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
@@ -104,7 +100,7 @@ export default function Home() {
               <div className="hanging-card bg-red-600 text-white px-4 py-3 rounded-md shadow-lg border-2 border-amber-400 transform rotate-[-2deg]">
                 <p className="text-sm md:text-base font-bold">SIGN UP & ORDER</p>
                 <p className="text-xl md:text-2xl font-bold">
-                  £30 <span className="text-xs md:text-sm">Earn Bell Bottom Credits</span>
+                  £30 <span className="text-xs md:text-sm">Earn Tikka Credits</span>
                 </p>
               </div>
             </div>
@@ -114,10 +110,10 @@ export default function Home() {
           <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4">
             <div className="bg-black/70 p-8 md:p-10 rounded-lg max-w-4xl w-full text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-orange-500 mb-4">
-                ENJOY THE BEST AUTHENTIC FLAVORS AT BELL BOTTOM
+                ENJOY THE BEST TIKKAS AT TIKKA NATION
               </h1>
               <p className="text-xl md:text-2xl text-white mb-8">
-                Savor the Taste and Earn valuable Bell Bottom Credits with every bite.
+                Savor the Taste and Earn valuable Tikka Credits with every bite.
               </p>
 
               <div className="flex flex-col md:flex-row gap-4 justify-center">
@@ -145,11 +141,7 @@ export default function Home() {
         </section>
 
         {/* Popular Dishes Carousel Section */}
-        <section className="py-16 bg-black">
-          <div className="container mx-auto px-4">
-            <DishCarousel />
-          </div>
-        </section>
+        <DishCarousel />
 
         {/* Shorts Video Section */}
         <ShortsCarousel />
@@ -158,17 +150,17 @@ export default function Home() {
         <ComprehensiveSection />
 
         {/* About Us Section */}
-        <section className="py-16 bg-gradient-to-b from-black to-red-950">
+        <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6 text-amber-400">Authentic Indian Cuisine</h2>
-              <p className="text-lg text-amber-100 mb-8">
+              <h2 className="text-3xl font-bold mb-6 text-blue-900">Authentic Indian Cuisine</h2>
+              <p className="text-lg text-blue-700 mb-8">
                 Experience the rich flavors and aromatic spices of traditional Indian cooking. Our chefs bring decades
                 of experience and family recipes to create an unforgettable dining experience.
               </p>
               <Link
                 href="/about"
-                className="inline-block px-6 py-3 bg-amber-800 hover:bg-amber-700 text-white rounded-md font-medium transition"
+                className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition shadow-lg"
               >
                 Our Story
               </Link>
@@ -177,48 +169,48 @@ export default function Home() {
         </section>
 
         {/* Reservation Section */}
-        <section id="reservations" className="py-16 bg-black">
+        <section id="reservations" className="py-16 bg-gradient-to-r from-blue-600 to-red-600">
           <div className="container mx-auto px-4">
-            <div className="max-w-md mx-auto bg-red-950 p-8 rounded-lg shadow-xl border border-amber-900/30">
-              <h2 className="text-2xl font-bold mb-6 text-amber-400 text-center">Make a Reservation</h2>
+            <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-xl border-2 border-blue-200">
+              <h2 className="text-2xl font-bold mb-6 text-blue-900 text-center">Make a Reservation</h2>
               <form className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-amber-200 mb-1">
+                  <label htmlFor="name" className="block text-blue-700 mb-1 font-medium">
                     Name
                   </label>
                   <input
                     type="text"
                     id="name"
-                    className="w-full px-4 py-2 bg-black border border-amber-800 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 text-white"
+                    className="w-full px-4 py-2 bg-blue-50 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-900"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-amber-200 mb-1">
+                  <label htmlFor="email" className="block text-blue-700 mb-1 font-medium">
                     Email
                   </label>
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-4 py-2 bg-black border border-amber-800 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 text-white"
+                    className="w-full px-4 py-2 bg-blue-50 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-900"
                   />
                 </div>
                 <div>
-                  <label htmlFor="date" className="block text-amber-200 mb-1">
+                  <label htmlFor="date" className="block text-blue-700 mb-1 font-medium">
                     Date & Time
                   </label>
                   <input
                     type="datetime-local"
                     id="date"
-                    className="w-full px-4 py-2 bg-black border border-amber-800 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 text-white"
+                    className="w-full px-4 py-2 bg-blue-50 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-900"
                   />
                 </div>
                 <div>
-                  <label htmlFor="guests" className="block text-amber-200 mb-1">
+                  <label htmlFor="guests" className="block text-blue-700 mb-1 font-medium">
                     Number of Guests
                   </label>
                   <select
                     id="guests"
-                    className="w-full px-4 py-2 bg-black border border-amber-800 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 text-white"
+                    className="w-full px-4 py-2 bg-blue-50 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-900"
                   >
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                       <option key={num} value={num}>
@@ -230,7 +222,7 @@ export default function Home() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-3 bg-red-700 hover:bg-red-600 text-white rounded-md font-medium transition"
+                  className="w-full py-3 bg-red-600 hover:bg-red-700 text-white rounded-md font-medium transition shadow-lg"
                 >
                   Book Now
                 </button>
@@ -240,36 +232,36 @@ export default function Home() {
         </section>
 
         {/* Locations Section */}
-        <section id="locations" className="py-16 bg-gradient-to-b from-red-950 to-black">
+        <section id="locations" className="py-16 bg-gradient-to-b from-white to-blue-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-amber-400">Our Locations</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">Our Locations</h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="bg-black p-6 rounded-lg border border-amber-900/30 hover:border-amber-700 transition">
-                <h3 className="text-xl font-bold mb-2 text-amber-400">St George's Shopping Centre</h3>
-                <p className="text-amber-100 mb-4">Harrow, London</p>
-                <p className="text-amber-200 mb-2">Opening Hours:</p>
-                <ul className="text-amber-100 mb-4">
+              <div className="bg-white p-6 rounded-lg border-2 border-blue-200 hover:border-blue-400 transition shadow-lg hover:shadow-xl">
+                <h3 className="text-xl font-bold mb-2 text-blue-900">St George's Shopping Centre</h3>
+                <p className="text-blue-700 mb-4 font-medium">Harrow, London</p>
+                <p className="text-blue-800 mb-2 font-semibold">Opening Hours:</p>
+                <ul className="text-blue-600 mb-4 space-y-1">
                   <li>Monday - Friday: 11:00 AM - 10:00 PM</li>
                   <li>Saturday - Sunday: 12:00 PM - 11:00 PM</li>
                 </ul>
                 <Link
                   href="/locations/harrow"
-                  className="inline-block px-4 py-2 bg-amber-800 hover:bg-amber-700 text-white rounded-md text-sm font-medium transition"
+                  className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm font-medium transition shadow-md"
                 >
                   Get Directions
                 </Link>
               </div>
-              <div className="bg-black p-6 rounded-lg border border-amber-900/30 hover:border-amber-700 transition">
-                <h3 className="text-xl font-bold mb-2 text-amber-400">St Paul's Market Place</h3>
-                <p className="text-amber-100 mb-4">London</p>
-                <p className="text-amber-200 mb-2">Opening Hours:</p>
-                <ul className="text-amber-100 mb-4">
+              <div className="bg-white p-6 rounded-lg border-2 border-red-200 hover:border-red-400 transition shadow-lg hover:shadow-xl">
+                <h3 className="text-xl font-bold mb-2 text-red-900">St Paul's Market Place</h3>
+                <p className="text-red-700 mb-4 font-medium">London</p>
+                <p className="text-red-800 mb-2 font-semibold">Opening Hours:</p>
+                <ul className="text-red-600 mb-4 space-y-1">
                   <li>Monday - Friday: 11:00 AM - 10:00 PM</li>
                   <li>Saturday - Sunday: 12:00 PM - 11:00 PM</li>
                 </ul>
                 <Link
                   href="/locations/stpauls"
-                  className="inline-block px-4 py-2 bg-amber-800 hover:bg-amber-700 text-white rounded-md text-sm font-medium transition"
+                  className="inline-block px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md text-sm font-medium transition shadow-md"
                 >
                   Get Directions
                 </Link>
@@ -280,14 +272,14 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-black border-t border-amber-900/30 py-8">
+      <footer className="bg-gradient-to-r from-blue-900 to-blue-800 border-t-4 border-red-500 py-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-bold mb-4 text-amber-400">Bell Bottom</h3>
-              <p className="text-amber-100 mb-4">Authentic Indian cuisine with a modern twist.</p>
+              <h3 className="text-lg font-bold mb-4 text-white">Bell Bottom</h3>
+              <p className="text-blue-100 mb-4">Authentic Indian cuisine with a modern twist.</p>
               <div className="flex space-x-4">
-                <a href="#" className="text-amber-400 hover:text-amber-300">
+                <a href="#" className="text-white hover:text-red-300 transition">
                   <span className="sr-only">Facebook</span>
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
@@ -297,7 +289,7 @@ export default function Home() {
                     />
                   </svg>
                 </a>
-                <a href="#" className="text-amber-400 hover:text-amber-300">
+                <a href="#" className="text-white hover:text-red-300 transition">
                   <span className="sr-only">Instagram</span>
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
@@ -307,7 +299,7 @@ export default function Home() {
                     />
                   </svg>
                 </a>
-                <a href="#" className="text-amber-400 hover:text-amber-300">
+                <a href="#" className="text-white hover:text-red-300 transition">
                   <span className="sr-only">Twitter</span>
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -316,57 +308,57 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-bold mb-4 text-amber-400">Quick Links</h3>
+              <h3 className="text-lg font-bold mb-4 text-white">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/menu" className="text-amber-100 hover:text-amber-400 transition">
+                  <Link href="/menu" className="text-blue-100 hover:text-white transition">
                     Menu
                   </Link>
                 </li>
                 <li>
-                  <Link href="/reservations" className="text-amber-100 hover:text-amber-400 transition">
+                  <Link href="/reservations" className="text-blue-100 hover:text-white transition">
                     Reservations
                   </Link>
                 </li>
                 <li>
-                  <Link href="/catering" className="text-amber-100 hover:text-amber-400 transition">
+                  <Link href="/catering" className="text-blue-100 hover:text-white transition">
                     Catering
                   </Link>
                 </li>
                 <li>
-                  <Link href="/franchise" className="text-amber-100 hover:text-amber-400 transition">
+                  <Link href="/franchise" className="text-blue-100 hover:text-white transition">
                     Franchise
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-bold mb-4 text-amber-400">Contact</h3>
+              <h3 className="text-lg font-bold mb-4 text-white">Contact</h3>
               <ul className="space-y-2">
-                <li className="text-amber-100">Email: info@bellbottom.com</li>
-                <li className="text-amber-100">Phone: +44 20 1234 5678</li>
+                <li className="text-blue-100">Email: info@bellbottom.com</li>
+                <li className="text-blue-100">Phone: +44 20 1234 5678</li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-bold mb-4 text-amber-400">Newsletter</h3>
-              <p className="text-amber-100 mb-4">Subscribe to receive special offers and updates.</p>
+              <h3 className="text-lg font-bold mb-4 text-white">Newsletter</h3>
+              <p className="text-blue-100 mb-4">Subscribe to receive special offers and updates.</p>
               <form className="flex">
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="px-4 py-2 bg-black border border-amber-800 rounded-l-md focus:outline-none focus:ring-2 focus:ring-amber-600 text-white w-full"
+                  className="px-4 py-2 bg-white border border-blue-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-red-500 text-blue-900 w-full"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-red-700 hover:bg-red-600 text-white rounded-r-md font-medium transition"
+                  className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-r-md font-medium transition"
                 >
                   Join
                 </button>
               </form>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-amber-900/30 text-center">
-            <p className="text-amber-100">&copy; {new Date().getFullYear()} Bell Bottom. All rights reserved.</p>
+          <div className="mt-8 pt-8 border-t border-blue-700 text-center">
+            <p className="text-blue-100">&copy; {new Date().getFullYear()} Bell Bottom. All rights reserved.</p>
           </div>
         </div>
       </footer>
